@@ -1,32 +1,11 @@
 import sqlite3
 import itertools
-import requests
+import BibleService
 from datetime import date
 
 NUM_DAYS_IN_PLAN = 720
 
-class BibleService(object):
-    def __init__(self):
-        self.API_BASE_URL = 'http://www.esvapi.org/v2/rest/passageQuery'
-
-    def get_passage_text(self, reference):
-        payload = {
-            'key': 'IP',
-            'passage' : reference,
-            'include-headings': 'false',
-            'output-format': 'plain-text',
-            'include-passage-references': 'false',
-            'include-first-verse-numbers': 'false',
-            'include-verse-numbers' : 'false',
-            'include-footnotes': 'false',
-            'include-passage-horizontal-lines': 'false',
-            'include-heading-horizontal-lines': 'false',
-            'line-length': '0'
-        }
-        r = requests.get(self.API_BASE_URL, params = payload)
-        return r.text
-
-bible_service = BibleService()
+bible_service = BibleService.BibleService()
 
 def get_day_number():
     initial_date = date(2014, 11, 25)
