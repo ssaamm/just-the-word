@@ -20,3 +20,7 @@ p {
     text-align: justify;
     hyphens: auto;
 }
+
+#footer {
+    font-size: 10px;
+}
