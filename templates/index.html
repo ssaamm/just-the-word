@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html;charset=utf8'>
+        <link href='./static/style.css' rel='stylesheet' type='text/css'>
+        <link href='./static/favicon.ico' rel='shortcut icon'>
+        <title>Just the Word</title>
+    </head>
+    <body>
+        {% for p in passages %}
+        <h1>{{ p[0] }}</h1>
+        <p>{{ p[1] }}</p>
+        {% endfor %}
+    </body>
+</html>
