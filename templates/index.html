@@ -8,8 +8,10 @@
     </head>
     <body>
         {% for p in passages %}
-        <h1>{{ p[0] }}</h1>
-        <p>{{ p[1] }}</p>
+        <h1>{{ p.reference }}</h1>
+        {% for t in p.text %}
+        <p>{{ t }}</p>
+        {% endfor %}
         {% endfor %}
     </body>
 </html>

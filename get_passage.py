@@ -1,6 +1,7 @@
 import sqlite3
 import itertools
 import BibleService
+from Passage import Passage
 from datetime import date
 
 NUM_DAYS_IN_PLAN = 720
@@ -28,8 +29,10 @@ def get_passage(reference):
 def get_passages(day_number):
     days_references = get_references(day_number)
     references = [x.strip() for x in days_references[0].split(";")]
-    passages = [get_passage(r) for r in references]
-    return itertools.izip(references, passages)
+    passages = []
+    for reference in references:
+        passages.append(Passage(reference, get_passage(reference).split('\n')))
+    return passages 
 
 def get_passages_for_today():
     return get_passages(get_day_number())
