@@ -1,7 +1,7 @@
 import sqlite3
 import itertools
 import BibleService
-from Passage import Passage
+from models import Passage
 from datetime import date
 
 NUM_DAYS_IN_PLAN = 720
