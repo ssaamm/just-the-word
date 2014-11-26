@@ -25,7 +25,7 @@ def dump_plan():
     conn.close()
 
 def dump_passage_text():
-    conn = sqlite3.connect('../plan.db')
+    conn = sqlite3.connect('plan.db')
     c = conn.cursor()
     c.execute('SELECT * FROM passage_text')
     for r in c:
