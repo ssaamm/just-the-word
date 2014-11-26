@@ -8,6 +8,10 @@ def init_db():
         day_id INT PRIMARY KEY NOT NULL,
         passages TEXT NOT NULL
     );''')
+    c.execute('''CREATE TABLE passage_text (
+        reference TEXT NOT NULL,
+        passage TEXT NOT NULL
+    );''')
     conn.commit()
     conn.close()
 
@@ -15,6 +19,15 @@ def dump_plan():
     conn = sqlite3.connect('plan.db')
     c = conn.cursor()
     c.execute('SELECT * FROM plan')
+    for r in c:
+        print r
+    conn.commit()
+    conn.close()
+
+def dump_passage_text():
+    conn = sqlite3.connect('../plan.db')
+    c = conn.cursor()
+    c.execute('SELECT * FROM passage_text')
     for r in c:
         print r
     conn.commit()
@@ -33,3 +46,4 @@ def init_plan():
 
 if __name__ == "__main__":
     dump_plan()
+    dump_passage_text()
