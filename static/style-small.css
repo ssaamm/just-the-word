@@ -1,0 +1,6 @@
+body {
+    background-size: 50% auto;
+    -o-background-size: 50% auto;
+    -moz-background-size: 50% auto;
+    -webkit-background-size: 50% auto;
+}
