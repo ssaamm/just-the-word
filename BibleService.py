@@ -1,5 +1,6 @@
 import requests
 import sqlite3
+from common import DB_NAME
 
 class BibleService(object):
     def __init__(self):
@@ -14,7 +15,7 @@ class BibleService(object):
         return passage_text
 
     def set_cached_text(self, reference, passage_text):
-        conn = sqlite3.connect('plan.db')
+        conn = sqlite3.connect(DB_NAME)
         c = conn.cursor()
         c.execute('INSERT INTO passage_text (reference,passage) VALUES (?,?)',
                 (reference, passage_text))
@@ -22,7 +23,7 @@ class BibleService(object):
         conn.close()
 
     def get_cached_text(self, reference):
-        conn = sqlite3.connect('plan.db')
+        conn = sqlite3.connect(DB_NAME)
         c = conn.cursor()
         c.execute('SELECT passage FROM passage_text WHERE reference = ?',
                 (reference,))

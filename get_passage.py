@@ -2,19 +2,20 @@ import sqlite3
 import itertools
 import BibleService
 from models import Passage
+from common import DB_NAME
 from datetime import date
 
 NUM_DAYS_IN_PLAN = 720
+INITIAL_DATE = date(2014, 11, 25)
 
 bible_service = BibleService.BibleService()
 
 def get_day_number():
-    initial_date = date(2014, 11, 25)
-    delta = date.today() - initial_date
+    delta = date.today() - INITIAL_DATE
     return delta.days % NUM_DAYS_IN_PLAN
 
 def get_references(day_num):
-    conn = sqlite3.connect('plan.db')
+    conn = sqlite3.connect(DB_NAME)
     c = conn.cursor()
     day_num_tuple = (day_num,)
     c.execute('''SELECT passages FROM plan WHERE day_id = ? LIMIT 1;''', day_num_tuple)
