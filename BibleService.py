@@ -28,7 +28,7 @@ class BibleService(object):
                 (reference,))
         text = c.fetchone()
         conn.close()
-        return text[0]
+        return None if not text else text[0]
 
     def get_api_text(self, reference):
         payload = {
