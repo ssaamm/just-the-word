@@ -3,6 +3,10 @@ body {
     background-image: url('coffee.png');
     background-repeat: no-repeat;
     background-position: right top;
+    background-size: 50% auto;
+    -o-background-size: 50% auto;
+    -moz-background-size: 50% auto;
+    -webkit-background-size: 50% auto;
     max-width: 700px;
     padding: 3em;
 }
