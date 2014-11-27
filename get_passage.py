@@ -32,7 +32,8 @@ def get_passages(day_number):
     references = [x.strip() for x in days_references[0].split(";")]
     passages = []
     for reference in references:
-        passages.append(Passage(reference, get_passage(reference).split('\n')))
+        passages.append(Passage(reference, itertools.ifilter(lambda x: x,
+            [s.strip() for s in get_passage(reference).split('\n')])))
     return passages 
 
 def get_passages_for_today():
