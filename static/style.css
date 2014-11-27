@@ -1,29 +1,29 @@
 body {
-    background-color: #ffffff;
-    background-image: url('coffee.png');
-    background-repeat: no-repeat;
-    background-position: right top;
-    max-width: 700px;
-    padding: 3em;
+  max-width: 700px;
+  padding: 3em;
+  background-color: #fff;
+  background-image: url("coffee.png");
+  background-repeat: no-repeat;
+  background-position: right top;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url('https://fonts.googleapis.com/css?family=Droid+Serif');
-
 h1 {
-    font-size: 24px;
-    font-weight: normal;
-    font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: normal;
+  font-family: "Montserrat", sans-serif;
 }
 
 p {
-    font-size: 18px;
-    font-family: 'Droid Serif', serif;
-    line-height: 1.35;
-    text-align: justify;
-    hyphens: auto;
+  font-size: 18px;
+  font-family: "Droid Serif", serif;
+  line-height: 1.35;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
 }
 
-#footer {
-    font-size: 10px;
+.footer {
+  font-size: 10px;
 }

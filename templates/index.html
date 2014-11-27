@@ -1,20 +1,23 @@
 <!DOCTYPE html>
-<html lang='en'>
-    <head>
-        <meta http-equiv='Content-Type' content='text/html;charset=utf8'>
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link href='./static/style.css' rel='stylesheet' type='text/css'>
-        <link href='./static/style-small.css' media='(max-width: 1000px)' rel='stylesheet' type='text/css'>
-        <link href='./static/favicon.ico' rel='shortcut icon'>
-        <title>Coffee and the Word :: Come back daily for a drink of Scripture</title>
-    </head>
-    <body>
-        {% for p in passages %}
-        <h1>{{ p.reference }}</h1>
-        {% for t in p.text %}
-        <p>{{ t }}</p>
-        {% endfor %}
-        {% endfor %}
-        <span id='footer'>Created by <a href='http://samueltaylor.org'>Sam</a><br>Scripture taken from The Holy Bible, English Standard Version. Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Text provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.</span>
-    </body>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif">
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="stylesheet" media="(max-width: 1000px)" href="./static/style-small.css">
+    <link href="./static/favicon.ico" rel="shortcut icon">
+    <title>Coffee and the Word :: Come back daily for a drink of Scripture</title>
+  </head>
+  <body>
+    {% for p in passages %}
+    <h1>{{ p.reference }}</h1>
+    {% for t in p.text %}
+    <p>{{ t }}</p>
+    {% endfor %}
+    {% endfor %}
+    <span class="footer">Created by <a href="http://samueltaylor.org">Sam</a><br>Scripture taken from The Holy Bible, English Standard Version. Copyright &copy;2001 by <a href="http://www.crosswaybibles.org">Crossway Bibles</a>, a publishing ministry of Good News Publishers. Used by permission. All rights reserved. Text provided by the <a href="http://www.gnpcb.org/esv/share/services/">Crossway Bibles Web Service</a>.</span>
+  </body>
 </html>
